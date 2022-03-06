@@ -113,7 +113,7 @@ def pred_word(given_corpus):
 corpus_df = pd.read_excel("C://Users//lavee//Documents//UWindsor//Courses//Winter'22//NLP//Assignment 2//Corpus.xlsx",
                           index_col=None)
 
-corpus_df = corpus_df.head(1)
+# corpus_df = corpus_df.head(1)
 correct_words_list = corpus_df['Solution'].tolist()
 
 corpus_list = corpus_df[corpus_df.columns[1:6]]
@@ -151,7 +151,6 @@ for words, correct_word in zip(corpus_list_cleaned, correct_words_list):
     count = count + 1
     # Get the next word predictions for the given sentence
     _1gram_prediction, _2gram_prediction, _3gram_prediction, _5gram_prediction, _10gram_prediction = pred_word(words)
-    print(_1gram_prediction)
 
     # Check if word appears in the first prediction to calculate s@1
     if correct_word == _1gram_prediction[0]:
